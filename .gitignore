@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Caches / temp
+.cache/
+.tmp/
+.temp/
+.pnpm-store/
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
