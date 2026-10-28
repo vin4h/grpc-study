@@ -170,6 +170,76 @@ importers:
         specifier: ^12.0.10
         version: 12.0.10(@types/node@24.19.2)(prettier@3.9.10)
 
+  apps/orders-service:
+    dependencies:
+      '@nestjs/common':
+        specifier: ^12.0.1
+        version: 12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@7.2.0)
+      '@nestjs/core':
+        specifier: ^12.0.1
+        version: 12.2.0(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@7.2.0))(@nestjs/microservices@12.2.0)(@nestjs/platform-express@12.2.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/observe':
+        specifier: ^0.3.0
+        version: 0.3.18(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@7.2.0))(@nestjs/core@12.2.0)(@nestjs/microservices@12.2.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/platform-express':
+        specifier: ^12.0.1
+        version: 12.2.0(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@7.2.0))(@nestjs/core@12.2.0)(supports-color@7.2.0)
+      reflect-metadata:
+        specifier: ^0.2.2
+        version: 0.2.2
+      rxjs:
+        specifier: ^7.8.1
+        version: 7.8.2
+    devDependencies:
+      '@nestjs/cli':
+        specifier: ^12.0.0
+        version: 12.0.10(@types/node@24.19.2)(prettier@3.9.10)
+      '@nestjs/mau':
+        specifier: ^0.2.6
+        version: 0.2.9
+      '@nestjs/schematics':
+        specifier: ^12.0.0
+        version: 12.0.10(chokidar@5.0.0)(prettier@3.9.10)(typescript@6.0.3)
+      '@nestjs/testing':
+        specifier: ^12.0.1
+        version: 12.2.0(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@7.2.0))(@nestjs/core@12.2.0)(@nestjs/microservices@12.2.0)(@nestjs/platform-express@12.2.0)
+      '@types/express':
+        specifier: ^5.0.0
+        version: 5.0.6
+      '@types/node':
+        specifier: ^24.0.0
+        version: 24.19.2
+      '@types/supertest':
+        specifier: ^7.0.0
+        version: 7.2.1
+      '@vitest/coverage-v8':
+        specifier: ^4.1.2
+        version: 4.1.12(vitest@4.1.12)
+      oxlint:
+        specifier: ^1.58.0
+        version: 1.89.0(oxlint-tsgolint@7.0.2005)
+      oxlint-tsgolint:
+        specifier: ^7.0.2001
+        version: 7.0.2005
+      prettier:
+        specifier: ^3.4.2
+        version: 3.9.10
+      source-map-support:
+        specifier: ^0.5.21
+        version: 0.5.21
+      supertest:
+        specifier: ^7.0.0
+        version: 7.3.1(supports-color@7.2.0)
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.3
+      vite:
+        specifier: ^8.0.0
+        version: 8.3.5(@types/node@24.19.2)
+      vitest:
+        specifier: ^4.1.2
+        version: 4.1.12(@types/node@24.19.2)(@vitest/coverage-v8@4.1.12)(vite@8.3.5(@types/node@24.19.2))
+
   apps/products-service:
     dependencies:
       '@grpc/grpc-js':
@@ -178,6 +248,9 @@ importers:
       '@grpc/proto-loader':
         specifier: ^0.8.1
         version: 0.8.1
+      '@grpc/reflection':
+        specifier: ^1.0.4
+        version: 1.0.4(@grpc/grpc-js@1.14.6)
       '@nestjs/common':
         specifier: ^12.0.1
         version: 12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@7.2.0)
@@ -298,10 +371,20 @@ packages:
     resolution: {integrity: sha512-SgC/B3/VZ8lTyOZ4Cwk6f1skWhmkNAaVfiX90qd5u1rRXGKk1//8FTUEN9GvOUq7rfWIqAYkA3CoyumYVpOS6g==}
     engines: {node: '>=12.10.0'}
 
+  '@grpc/proto-loader@0.7.15':
+    resolution: {integrity: sha512-tMXdRCfYVixjuFK+Hk0Q1s38gV9zDiDJfWL3h1rv4Qc39oILCu1TRTDt7+fGUI8K4G1Fj125Hx/ru3azECWTyQ==}
+    engines: {node: '>=6'}
+    hasBin: true
+
   '@grpc/proto-loader@0.8.1':
     resolution: {integrity: sha512-wtF6h+DY6M3YaDBPAmvuuA6jV8Sif9MjtOI5euKFWRgCDl5PeDpPsHR9u2l6St5ceY8AZgoNDww5+HvEsXFsGg==}
     engines: {node: '>=6'}
     hasBin: true
+
+  '@grpc/reflection@1.0.4':
+    resolution: {integrity: sha512-znA8v4AviOD3OPOxy11pxrtP8k8DanpefeTymS8iGW1fVr1U2cHuzfhYqDPHnVNDf4qvF9E25KtSihPy2DBWfQ==}
+    peerDependencies:
+      '@grpc/grpc-js': ^1.8.21
 
   '@inquirer/ansi@2.0.9':
     resolution: {integrity: sha512-0Ywt3S8tqM6TWUcsRlBFQ1x+X3/o8kktX0ZiKAnByYb9GFDknnOhse1PVtfiD2BXPI8ar+BWx9PV9R0lQIcygw==}
@@ -564,6 +647,44 @@ packages:
       kafkajs:
         optional: true
       mqtt:
+        optional: true
+
+  '@nestjs/observe@0.3.18':
+    resolution: {integrity: sha512-h3+oJzZyWxO161HXHRLpNqrusW8KcFAXuY//KLUMxG+v/kPKij2P0yYClpFUWWrPUPLMWV8l4Ze1q+dPQZkd5w==}
+    engines: {node: '>= 20.19.0'}
+    hasBin: true
+    peerDependencies:
+      '@nestjs/bull': ^11.0.0 || ^12.0.0
+      '@nestjs/bullmq': ^11.0.0 || ^12.0.0
+      '@nestjs/common': ^11.0.0 || ^12.0.0
+      '@nestjs/core': ^11.0.0 || ^12.0.0
+      '@nestjs/graphql': ^13.0.0 || ^14.0.0
+      '@nestjs/microservices': ^11.0.0 || ^12.0.0
+      '@nestjs/schedule': ^4.0.0 || ^5.0.0 || ^6.0.0 || ^12.0.0
+      '@nestjs/websockets': ^11.0.0 || ^12.0.0
+      '@taskforcesh/bullmq-pro': ^7.0.0
+      bull: ^3.3.0 || ^4.0.0
+      bullmq: ^5.0.0 || ^6.0.0
+      reflect-metadata: ^0.1.12 || ^0.2.0
+      rxjs: ^7.0.0
+    peerDependenciesMeta:
+      '@nestjs/bull':
+        optional: true
+      '@nestjs/bullmq':
+        optional: true
+      '@nestjs/graphql':
+        optional: true
+      '@nestjs/microservices':
+        optional: true
+      '@nestjs/schedule':
+        optional: true
+      '@nestjs/websockets':
+        optional: true
+      '@taskforcesh/bullmq-pro':
+        optional: true
+      bull:
+        optional: true
+      bullmq:
         optional: true
 
   '@nestjs/platform-express@12.2.0':
@@ -2205,12 +2326,25 @@ snapshots:
       '@grpc/proto-loader': 0.8.1
       '@js-sdsl/ordered-map': 4.4.2
 
+  '@grpc/proto-loader@0.7.15':
+    dependencies:
+      lodash.camelcase: 4.3.0
+      long: 5.3.2
+      protobufjs: 7.6.6
+      yargs: 17.7.3
+
   '@grpc/proto-loader@0.8.1':
     dependencies:
       lodash.camelcase: 4.3.0
       long: 5.3.2
       protobufjs: 7.6.6
       yargs: 17.7.3
+
+  '@grpc/reflection@1.0.4(@grpc/grpc-js@1.14.6)':
+    dependencies:
+      '@grpc/grpc-js': 1.14.6
+      '@grpc/proto-loader': 0.7.15
+      protobufjs: 7.6.6
 
   '@inquirer/ansi@2.0.9': {}
 
@@ -2427,6 +2561,16 @@ snapshots:
       tslib: 2.8.1
     optionalDependencies:
       '@grpc/grpc-js': 1.14.6
+
+  '@nestjs/observe@0.3.18(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@7.2.0))(@nestjs/core@12.2.0)(@nestjs/microservices@12.2.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)':
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.31
+      '@nestjs/common': 12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@7.2.0)
+      '@nestjs/core': 12.2.0(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@7.2.0))(@nestjs/microservices@12.2.0)(@nestjs/platform-express@12.2.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      reflect-metadata: 0.2.2
+      rxjs: 7.8.2
+    optionalDependencies:
+      '@nestjs/microservices': 12.2.0(@grpc/grpc-js@1.14.6)(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@7.2.0))(@nestjs/core@12.2.0)(reflect-metadata@0.2.2)(rxjs@7.8.2)
 
   '@nestjs/platform-express@12.2.0(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@7.2.0))(@nestjs/core@12.2.0)(supports-color@7.2.0)':
     dependencies:
